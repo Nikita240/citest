@@ -1,0 +1,13 @@
+name: Run command in devcontainer.
+description: Runs a command in a devcontainer.
+inputs:
+  command:  # command to run
+    description: What command should be run.
+    required: true
+runs:
+  using: docker
+  image: ../../ci.Dockerfile
+  entrypoint: sh
+  args:
+    - "-c"
+    - ${{ inputs.command }}
