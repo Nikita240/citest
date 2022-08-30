@@ -6,7 +6,7 @@ inputs:
     required: true
 runs:
   using: docker
-  image: ../../ci.Dockerfile
+  image: ../../../ci.Dockerfile
   entrypoint: sh
   args:
     - "-c"
