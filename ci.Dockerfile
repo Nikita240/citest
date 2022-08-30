@@ -38,7 +38,7 @@ ENV PATH="${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${HOME}/.local/bin:$PATH"
 
 RUN curl https://pyenv.run | bash
 RUN pyenv init - && pyenv virtualenv-init - && \
-    pyenv install 3.8.13
+    pyenv install 3.8.13 && \
     pyenv global 3.8.13
 
 RUN curl -sSL https://install.python-poetry.org | python - --preview
