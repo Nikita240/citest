@@ -5,10 +5,11 @@ on:
   workflow_dispatch:
 jobs:
   tests:
-    runs-on: ['self-hosted']
+    runs-on: ['self-hosted', 'linux', 'shared-runner-ephemeral']
     steps:
     - uses: actions/checkout@v3
-    - uses: satackey/action-docker-layer-caching@v0.0.11
+    - uses: synced-actions/satackey-action-docker-layer-caching@v0.0.11
+      continue-on-error: true
       with:
         key: foo-docker-cache-{hash}
         restore-keys: |
