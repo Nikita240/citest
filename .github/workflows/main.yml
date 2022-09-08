@@ -18,6 +18,8 @@ jobs:
         key: foo-docker-cache-{hash}
         restore-keys: |
           foo-docker-cache-
+      env:
+        ACTIONS_STEP_DEBUG: true
     - uses: ./.github/actions/run
       with:
           command: echo "Hello World"
